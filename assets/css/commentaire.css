@@ -1,0 +1,198 @@
+/* 
+   Base : corps de la page et HTML
+  */
+body, html {
+    min-height: 100vh; /* S'assure que le corps prend au moins toute la hauteur de la fenêtre */
+    display: flex;      /* Utilisation de Flexbox pour gérer la disposition */
+    flex-direction: column; /* Alignement vertical du contenu principal */
+}
+
+/* Le main prend tout l'espace restant entre le header et le footer */
+main {
+    flex: 1;
+}
+
+/* 
+   Fond général de la page
+   */
+.fond5 {
+    background-color: #ffffff; /* Couleur de fond principale */
+    color: #424040;            /* Couleur du texte */
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased; /* Amélioration de l'affichage des polices sur Webkit */
+    -moz-osx-font-smoothing: grayscale;  /* Amélioration sur Firefox Mac */
+}
+
+/* 
+   Titres
+ */
+h2 {
+    text-align: center;       /* Centrage du texte */
+    padding: 24px 12px;       /* Espacement autour du titre */
+    margin: 18px 0;           /* Marge verticale */
+    font-size: 2.2rem;        /* Taille du texte */
+    color: #424040;           /* Couleur du texte */
+}
+
+/*
+   Wrapper principal pour centrer le contenu
+ */
+.main-wrap {
+    display: flex;                 /* Flexbox pour aligner le contenu */
+    flex-direction: row;           /* Alignement horizontal par défaut */
+    align-items: center;           /* Alignement vertical */
+    justify-content: flex-start;   /* Alignement horizontal au début */
+    min-height: calc(100vh - 160px); /* S'assure que le wrapper occupe la hauteur restante */
+    padding: 20px 0 40px 0;       /* Espacement interne */
+    box-sizing: border-box;       /* Inclut le padding dans la taille totale */
+}
+
+/*
+   Conteneur du formulaire de commentaire
+    */
+.comment-container {
+    width: 100%;                  /* Prend toute la largeur disponible */
+    max-width: 620px;             /* Largeur maximale */
+    margin: 0 10px;               /* Marge horizontale */
+    padding: 36px;                /* Espacement interne */
+    border-radius: 14px;          /* Bords arrondis */
+    background: rgba(255, 255, 255, 0.60); /* Fond semi-transparent */
+    backdrop-filter: blur(10px);  /* Effet flou derrière le fond */
+    -webkit-backdrop-filter: blur(10px); /* Compatibilité Safari */
+    border: 2px solid rgba(66, 64, 64, 0.12); /* Bordure subtile */
+    box-shadow: 0 10px 30px rgba(66, 64, 64, 0.06); /* Ombre portée */
+}
+
+/* ========================================
+   Formulaire
+   ======================================== */
+.comment-form {
+    width: 100%;                 /* Prend toute la largeur du conteneur */
+    display: flex;
+    flex-direction: column;      /* Alignement vertical des champs */
+}
+
+/* Label du formulaire */
+.comment-label {
+    display: block;              /* Bloc complet */
+    margin-bottom: 12px;         /* Marge sous le label */
+    font-size: 1.15rem;          /* Taille du texte */
+    color: #424040;              /* Couleur du texte */
+}
+
+/* Zone de texte pour le commentaire */
+.comment-form textarea {
+    width: 100%;
+    min-height: 140px;           /* Hauteur minimale */
+    max-height: 360px;           /* Hauteur maximale */
+    border-radius: 10px;         /* Bords arrondis */
+    border: 1px solid rgba(66, 64, 64, 0.18); /* Bordure subtile */
+    font-size: 1rem;
+    line-height: 1.4;
+    resize: vertical;            /* Permet de redimensionner verticalement */
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.95); /* Fond légèrement opaque */
+    color: #424040;              /* Couleur du texte */
+    font-family: inherit;
+    margin-bottom: 18px;
+    outline: none;               /* Supprime le contour par défaut */
+    transition: box-shadow 0.18s ease, transform 0.12s ease; /* Animations douces */
+}
+
+/* Effet au focus sur la zone de texte */
+.comment-form textarea:focus {
+    box-shadow: 0 6px 18px rgba(66, 64, 64, 0.08); /* Ombre plus visible */
+    transform: translateY(-2px);                  /* Légère remontée */
+}
+
+/* 
+   Boutons
+   */
+.btn-row {
+    display: flex;
+    justify-content: center;      /* Centrage horizontal */
+    align-items: center;          /* Centrage vertical */
+}
+
+/* Style du bouton d'envoi */
+.btn-envoyer {
+    background: #424040;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 26px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: transform 0.18s ease, background 0.18s ease; /* Animation hover */
+    font-family: inherit;
+}
+
+/* Effet au survol et au focus */
+.btn-envoyer:hover,
+.btn-envoyer:focus {
+    background: #2e2d2d;
+    transform: translateY(-3px); /* Légère remontée du bouton */
+}
+
+/*
+   Messages de succès ou d'erreur
+   */
+.message {
+    margin-top: 16px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.message.success {
+    color: green;
+}
+
+.message.error {
+    color: #c0392b; /* Rouge pour l'erreur */
+}
+
+/*
+   Footer
+  */
+footer {
+    width: 100%;
+    background-color: #6b2e  2e;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+    color: #af870d;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: auto; /* Place le footer en bas */
+}
+
+/*    Navbar   */
+ 
+.navbar-custom a {
+    color: #111 !important;
+    font-size: 20px !important;
+}
+
+.navbar-custom {
+    background-color: #fdf6e3 !important; 
+}
+
+/* Responsive : adaptation   */
+  
+@media (max-width: 640px) {
+    .comment-container {
+        padding: 22px;
+        border-radius: 12px;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+        padding: 16px;
+    }
+
+    .btn-envoyer {
+        width: 100%; /* Bouton prend toute la largeur sur mobile */
+    }
+}

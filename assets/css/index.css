@@ -1,0 +1,171 @@
+/* ----- Général ----- */
+body, html {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    color: #3e2c2c;
+    background: #fdf6e3;
+     font-family: 'Poppins', sans-serif;
+}
+
+/* ----- Navigation ----- */
+nav {
+    display: flex;
+    padding: 20px;
+    justify-content: space-evenly;
+    margin: 0;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+}
+
+/* Style des liens */
+a {
+    background-color: #f5e1a4;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 8px 15px;
+    color: #3e2c2c;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ----- Titres ----- */
+h1, h2 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 32px;
+    margin-bottom: 15px;
+    font-family: 'Merriweather', serif;
+    color: #3e2c2c;
+    border-bottom: 2px solid #f5e1a4;
+    width: fit-content;
+    margin: auto;
+}
+
+/* ----- Texte ----- */
+p {
+    text-align: center;
+    font-size: 18px;
+    color: rgb(0, 0, 0);
+    line-height: 1.6;
+}
+
+/* ----- Articles ----- */
+article {
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #e0c97f;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fadeIn 1.2s ease-in-out; /* Animation ajoutée */
+}
+
+/* ----- Boutons généraux ----- */
+.btn {
+    display: inline-block;
+    margin: 15px auto;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-family: 'Merriweather', serif;
+}
+.btn-primary {
+    background-color:#5196c9c9;
+}
+/* ----- Section des cartes ----- */
+.accueil-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Permet de passer à deux cards par ligne sur mobile */
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.card {
+    background-color: #fffaf0;
+    border: 1px solid #e0c97f;
+    border-radius: 12px;
+    width: 280px;
+    box-shadow: 0 4px 12px rgba(107,46,46,0.15);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    display: block;
+}
+
+.card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.card-content h4 {
+    margin: 10px 0 8px 0;
+    color: #1529ff;
+}
+
+.card-content p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    color: #3e2c2c;
+    line-height: 1.4;
+}
+
+/* Animation hover */
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(107,46,46,0.25);
+}
+
+
+/* ----- Footer ----- */
+footer {
+    width: 100%;
+    background-color: #f3eeee;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: auto;
+}
+
+
+
+/* Responsive : 2 cards par ligne sur petits écrans */
+@media (max-width: 720px) {
+    .card {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+}
+
+/* Responsive : 1 card par ligne sur très petits écrans */
+@media (max-width: 480px) {
+    .card {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
+/* ----- Animation (ajoutée) ----- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}

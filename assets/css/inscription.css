@@ -1,0 +1,131 @@
+
+body,
+html {
+    min-height: 100vh; /* S'assure que le corps prend au moins toute la hauteur de la fenêtre */
+    display: flex;      /* Utilisation de Flexbox pour gérer la disposition */
+    flex-direction: column; 
+    background: #fdf6e3;
+}
+
+
+.fond1 {
+    background-color: #ffffff; /* Fond blanc pour la zone centrale */
+    color: #424040;            /* Couleur du texte */
+    min-height: 100vh;         /* Assure la hauteur minimale de la page */
+    display: flex;             /* Flexbox pour aligner le contenu */
+    flex-direction: column;
+    background: #fdf6e3;       /* Fond global */
+}
+
+/* 
+   Section principale (main)
+   */
+main {
+    flex: 1;                      /* Occupe tout l'espace restant entre header et footer */
+    display: flex;                 /* Flexbox pour centrer le contenu */
+    flex-direction: column;        
+    justify-content: center;      
+    align-items: center;         
+    padding: 20px;                 
+}
+
+/* 
+   Titres
+   */
+h2 {
+    text-align: center;   /* Centre le texte */
+    padding: 20px;        /* Espacement autour du titre */
+    margin-bottom: 20px;  /* Marge sous le titre */
+}
+
+/* 
+   Conteneur général pour centrer le formulaire
+  */
+.incueil {
+    display: flex;                 
+    justify-content: center;        /* Centre horizontalement */
+    align-items: center;            /* Centre verticalement */
+    width: 100%;                    /* Prend toute la largeur */
+}
+
+/*
+   Carte du formulaire (formulaire centré avec fond blanc et ombre)
+   = */
+.form-card {
+    background-color: rgba(255, 255, 255, 0.95); /* Fond légèrement opaque */
+    padding: 40px 30px;       /* Espacement interne */
+    border-radius: 12px;      /* Coins arrondis */
+    box-shadow: 0 4px 20px rgba(107,46,46,0.2); /* Ombre douce */
+    width: 100%;              /* Largeur complète */
+    max-width: 450px;         /* Largeur maximale */
+    display: flex;            /* Flexbox pour le formulaire */
+    flex-direction: column;   /* Champs empilés verticalement */
+    gap: 15px;                /* Espacement entre les champs */
+}
+
+/* 
+   Groupes de champs du formulaire
+    */
+.form-card .form-group {
+    display: flex;
+    flex-direction: column; /* Champs et labels empilés */
+}
+
+/* Label des champs */
+.form-card label {
+    margin-bottom: 5px; /* Petite marge sous le label */
+}
+
+/* Champs texte et mot de passe */
+.form-card input[type="text"],
+.form-card input[type="password"] {
+    padding: 10px 12px;   /* Espacement interne */
+    font-size: 16px;      /* Taille du texte */
+    border-radius: 6px;   /* Coins arrondis */
+    border: 1px solid #ccc; /* Bordure gris clair */
+    font-family: 'Poppins', sans-serif; /* Police moderne */
+}
+
+/* Focus sur les champs (effet visuel)
+    */
+.form-card input[type="text"]:focus,
+.form-card input[type="password"]:focus {
+    border-color: #6b2e2e; /* Bordure rouge foncé */
+    outline: none;          /* Supprime le contour par défaut */
+    box-shadow: 0 0 5px rgba(107,46,46,0.3); /* Légère ombre */
+}
+
+/* 
+   Bouton principal du formulaire
+   */
+.form-card .btn-primary {
+    margin-top: 10px;
+    font-size: 18px;
+    padding: 12px 20px;
+    cursor: pointer;       /* Curseur pointeur au survol */
+}
+
+/* 
+   Message d'erreur
+   */
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/*
+   Images
+    */
+img {
+    width: 50px; /* Taille standard des images */
+}
+
+/* 
+   Navbar
+  */
+.navbar-custom a {
+    color: #111 !important; /* Couleur du texte des liens */
+    font-size: 20px !important; /* Taille du texte */
+}

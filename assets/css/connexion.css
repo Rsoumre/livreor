@@ -1,0 +1,117 @@
+/* ----- Fond principal ----- */
+.fond2 {
+    background-color: #f5f2ec; /* Fond clair agréable */
+    color: #424040;
+    min-height: 100vh; /* Occupe tout l'écran */
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----- Main ----- */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* Centrage horizontal */
+    align-items: center;     /* Centrage vertical */
+    padding: 40px 20px;
+}
+
+/* ----- Titre h2 ----- */
+h2 {
+    font-family: 'Neonderthaw', cursive;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #6b2e2e;
+}
+
+/* ----- Card du formulaire ----- */
+form {
+    background-color: rgba(255, 255, 255, 0.95); /* Fond semi-opaque */
+    border-radius: 15px; /* Coins arrondis */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15); /* Ombre portée */
+    padding: 40px 30px;
+    width: 380px;
+    max-width: 90%;
+    font-family: 'Qwigley', cursive;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacement entre les champs */
+    transition: transform 0.3s ease; /* Pour effet hover */
+}
+
+/* Effet hover sur la card */
+form:hover {
+    transform: translateY(-5px);
+}
+
+/* ----- Champs du formulaire ----- */
+input[type="text"],
+input[type="password"] {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* ----- Bouton ----- */
+input[type="submit"] {
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #f5e1a4;
+    color: #6b2e2e;
+    border: 2px solid #6b2e2e;
+}
+
+/* ----- Message d'erreur ----- */
+.error-message {
+    color: red;
+    text-align: center;
+    margin-top: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+
+/* ----- Images ----- */
+img {
+    width: 50px;
+}
+
+/* ----- Footer ----- */
+footer {
+    width: 100%;
+   background-color: #f3eeee;
+    height: 50px;
+    padding-top: 10px;
+    text-align: center;
+    color: #af870d;
+    font-family: 'Merriweather', serif;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-top: auto;
+}
+
+/* ----- Body et HTML ----- */
+body, html {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ----- Navigation (navbar) ----- */
+.navbar-custom a {
+    color: #111 !important;
+    font-size: 20px !important;
+}
+
+.navbar-custom {
+    background-color: #fdf6e3 !important;
+}
