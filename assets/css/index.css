@@ -19,7 +19,7 @@ nav {
 
 /* Style des liens */
 a {
-    background-color: #f5e1a4;
+    
     border-radius: 6px;
     text-decoration: none;
     font-size: 20px;
@@ -146,21 +146,33 @@ footer {
 
 
 
-/* Responsive : 2 cards par ligne sur petits écrans */
-@media (max-width: 720px) {
-    .card {
-        width: 45%;
-        margin-bottom: 20px;
+
+/* Responsive : nav en colonne sur tablettes et mobiles */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column; /* Les liens s’empilent */
+        gap: 12px; /* Espacement entre les liens */
+    }
+
+    nav a {
+        width: 90%; /* Chaque lien prend presque toute la largeur */
+        text-align: center;
+        font-size: 18px; /* Réduction de taille */
     }
 }
 
-/* Responsive : 1 card par ligne sur très petits écrans */
+/* Responsive : encore plus petit écran */
 @media (max-width: 480px) {
-    .card {
-        width: 90%;
-        margin-bottom: 20px;
+    nav {
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 16px;
+        padding: 10px;
     }
 }
+
 
 
 
