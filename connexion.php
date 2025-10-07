@@ -1,11 +1,8 @@
 <?php
-// Démarrage de la session pour gérer les utilisateurs connectés
 session_start();
-
-// Durée maximale de la session : 30 minutes (1800 secondes)
 $session_timeout = 1800;
 
-// Vérification si la session existe et si elle a expiré
+//  si la session existe et si elle a expiré
 if (isset($_SESSION['LAST_ACTIVITY'])) {
     if (time() - $_SESSION['LAST_ACTIVITY'] > $session_timeout) {
         // Si la session a expiré, on la détruit et redirige vers la page de connexion avec paramètre timeout
@@ -18,27 +15,25 @@ if (isset($_SESSION['LAST_ACTIVITY'])) {
 
 // Mise à jour du timestamp de dernière activité
 $_SESSION['LAST_ACTIVITY'] = time();
-
-// Inclusion du fichier de connexion à la base de données
 include "config/serveur.php";
 
-// Variable pour stocker le message d'erreur
+// d'erreurms
 $error = null;
 
-// Traitement du formulaire après soumission
+//  formulairem
 if (isset($_POST['login']) && isset($_POST['password'])) {
     $login = $bdd->real_escape_string($_POST['login']); // sécurisation du login
     $password = $_POST['password'];
 
-    // Requête pour récupérer l'utilisateur correspondant au login
+    // Requête  récupérer  login
     $result = $bdd->query("SELECT * FROM utilisateurs WHERE login = '$login'");
 
     if ($result && $result->num_rows == 1) {
         $user = $result->fetch_assoc();
 
-        // Vérification du mot de passe hashé
+        //  vu mot de passe 
         if (password_verify($password, $user['password'])) {
-            // Création des variables de session
+        
             $_SESSION['id'] = $user['id'];
             $_SESSION['login'] = $user['login'];
             $_SESSION['prenom'] = $user['prenom'];
@@ -64,12 +59,9 @@ if (isset($_POST['login']) && isset($_POST['password'])) {
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Polices Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet">
-
-    <!-- CSS -->
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/connexion.css">
 

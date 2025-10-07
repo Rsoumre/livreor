@@ -1,5 +1,4 @@
 <?php
-// On démarre la session pour pouvoir utiliser $_SESSION (utile pour connexion, affichage pseudo, etc.)
 session_start();
 ?>
 
@@ -7,23 +6,16 @@ session_start();
 <html lang="fr">
 <head>
     <meta charset="utf-8">
-    <!-- Compatibilité IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!-- Responsive mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Polices Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Neonderthaw&family=Qwigley&family=Dancing+Script&family=Merriweather&display=swap" rel="stylesheet">
-
-    <!-- Feuille de style personnalisée -->
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Accueil - Livre d'or</title>
 </head>
 
 <body>
-    <!-- Inclusion du header (navigation/menu) -->
     <?php include 'layout/header.php'; ?>
     <!-- Section principale : présentation du Livre d'or -->
     <article>

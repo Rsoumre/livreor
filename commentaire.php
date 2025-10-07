@@ -1,33 +1,24 @@
 <?php
-// Démarrage de la session pour gérer les utilisateurs connectés
 session_start();
-
-// Inclusion du fichier de connexion à la base de données
 include "config/serveur.php";
-
-// Récupération de l'ID de l'utilisateur connecté
 $id = $_SESSION['id'];
-
-// Vérification que l'utilisateur est bien connecté
 if (!isset($id)) {
-    // Si pas connecté, redirection vers la page d'accueil
     header("location: index.php");
     exit();
 }
 
-// Vérification si le formulaire a été soumis
+//  formulaire soumis
 if (isset($_POST['envoyer'])) {
-    // Sécurisation du commentaire pour éviter les injections SQL
+    // Sécurisation  
     $comm = $bdd->real_escape_string($_POST['comm']);
-    // Récupération de la date et heure actuelles
+    // enregistrement 
     $date = date('Y-m-d H:i:s');
 
-    // Préparation de la requête pour insérer le commentaire dans la base
+    //  prépare une
     $stmt = $bdd->prepare("INSERT INTO commentaires (commentaire, id_utilisateurs, date) VALUES (?, ?, ?)");
-    // Liaison des paramètres à la requête préparée : s = string, i = integer
     $stmt->bind_param("sis", $comm, $id, $date);
 
-    // Exécution de la requête et gestion du message de succès ou d'erreur
+    // requête et gestion du message de succès ou d'erreur
     if ($stmt->execute()) {
         $message = "Commentaire ajouté avec succès !";
     } else {
@@ -36,7 +27,7 @@ if (isset($_POST['envoyer'])) {
 }
 
 // Limite de session : 30 minutes (1800 secondes)
-// Cette partie détruit la session si inactivité prolongée
+
 $session_timeout = 1800;
 if (isset($_SESSION['LAST_ACTIVITY'])) {
     if (time() - $_SESSION['LAST_ACTIVITY'] > $session_timeout) {

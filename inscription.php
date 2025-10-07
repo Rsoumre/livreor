@@ -1,30 +1,20 @@
 <?php
-// Démarrage de la session pour gérer l'utilisateur connecté
 session_start();
-
-// Durée maximale de la session : 30 minutes (1800 secondes)
 $session_timeout = 1800;
 
 // Vérification de la dernière activité de l'utilisateur
 if (isset($_SESSION['LAST_ACTIVITY'])) {
     if (time() - $_SESSION['LAST_ACTIVITY'] > $session_timeout) {
-        // Si la session a expiré, on la détruit et redirige vers la page de connexion
         session_unset();
         session_destroy();
         header('Location: connexion.php?timeout=1');
         exit();
     }
 }
-// Mise à jour du timestamp de la dernière activité
 $_SESSION['LAST_ACTIVITY'] = time();
-
-// Inclusion du fichier de connexion à la base de données
 include "config/serveur.php";
-
-// Variable pour stocker les messages d'erreur
 $error = null;
 
-// Si l'utilisateur est déjà connecté, redirection vers le profil
 if (isset($_SESSION['id'])) {
     header('Location: profil.php');
     exit();
@@ -40,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'];
     $confirm = $_POST['password_re'];
 
-    // Vérification que les deux mots de passe correspondent
+  
     if ($password !== $confirm) {
         $error = "Les mots de passe ne correspondent pas";
     } else {

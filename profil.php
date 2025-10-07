@@ -1,11 +1,6 @@
 <?php
-// Démarrage de la session
 session_start();
-
-// Inclusion du fichier de connexion à la base de données
 require_once 'config/serveur.php';
-
-// Vérification que l'utilisateur est connecté, sinon redirection
 if (!isset($_SESSION['id'])) {
     header('Location: connexion.php');
     exit();

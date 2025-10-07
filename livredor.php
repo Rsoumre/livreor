@@ -1,8 +1,5 @@
 <?php
-// Démarrage de la session pour gérer la connexion utilisateur
 session_start();
-
-// Inclusion du fichier de configuration pour la connexion à la base de données
 include 'config/serveur.php';
 ?>
 
@@ -11,14 +8,9 @@ include 'config/serveur.php';
 
 <head>
     <meta charset="utf-8">
-    <!-- Compatibilité avec Internet Explorer -->
     <meta http-equiv="X-UA-Compatible" content="IE-edge">
-    <!-- Adaptation pour les écrans mobiles -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Livre d'or</title>
-
-    <!-- Feuilles de style principales -->
+    <title>Livre d'or</title>>
     <link rel="stylesheet" href="assets/css/index.css">
     <link rel="stylesheet" href="assets/css/livre-or.css">
 </head>
@@ -28,14 +20,9 @@ include 'config/serveur.php';
     <?php include 'layout/header.php'; ?>
 
     <main>
-        <!-- Conteneur principal centré et avec image de fond -->
         <div class="parent">
-            <!-- Conteneur du texte et du tableau avec fond semi-transparent -->
             <div class="text">
-                <!-- Titre de la page -->
                 <h2>Livre d'or</h2>
-
-                <!-- Tableau affichant les commentaires -->
                 <table class="accueil-table-text">
                     <thead>
                         <tr>

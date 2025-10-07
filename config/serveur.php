@@ -21,7 +21,7 @@ define('INCLUDE_PATH', ROOT_PATH . '/includes');
 define('CORE_PATH', ROOT_PATH . '/core');
 define('PUBLIC_PATH', ROOT_PATH . '/public');
 
-// Connexion à la base de données
+
 try {
     $bdd = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
     $bdd->set_charset(DB_CHARSET);
