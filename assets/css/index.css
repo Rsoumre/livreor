@@ -1,35 +1,49 @@
 /* ----- Général ----- */
-body, html {
+body,
+html {
     height: 100%;
     padding: 0;
     margin: 0;
     color: #3e2c2c;
     background: #fdf6e3;
-     font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 /* ----- Navigation ----- */
 nav {
     display: flex;
     padding: 20px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    /* Aligne les éléments de gauche à droite */
+    gap: 12px;
+    /* Espacement entre les éléments */
     margin: 0;
-    box-shadow: 0 3px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    align-items: center;
+    flex-wrap: wrap;
+    /* Permet le retour à la ligne si nécessaire */
+}
+
+nav li {
+    list-style: none;
+    /* Enlève les puces si des li sont utilisés directement */
 }
 
 /* Style des liens */
 a {
-    
     border-radius: 6px;
     text-decoration: none;
     font-size: 20px;
     padding: 8px 15px;
     color: #3e2c2c;
     transition: all 0.3s ease-in-out;
+    display: inline-block;
+    /* Assure un comportement stable en ligne */
 }
 
 /* ----- Titres ----- */
-h1, h2 {
+h1,
+h2 {
     text-align: center;
     margin-top: 20px;
 }
@@ -61,8 +75,9 @@ article {
     padding: 20px;
     margin: 20px auto;
     width: 80%;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    animation: fadeIn 1.2s ease-in-out; /* Animation ajoutée */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1.2s ease-in-out;
+    /* Animation ajoutée */
 }
 
 /* ----- Boutons généraux ----- */
@@ -77,15 +92,18 @@ article {
     transition: all 0.3s ease-in-out;
     font-family: 'Merriweather', serif;
 }
+
 .btn-primary {
-    background-color:#5196c9c9;
+    background-color: #5196c9c9;
 }
+
 /* ----- Section des cartes ----- */
 .accueil-cards {
     display: flex;
     justify-content: center;
     gap: 20px;
-    flex-wrap: wrap; /* Permet de passer à deux cards par ligne sur mobile */
+    flex-wrap: wrap;
+    /* Permet de passer à deux cards par ligne sur mobile */
     margin: 40px auto;
     max-width: 1000px;
 }
@@ -95,7 +113,7 @@ article {
     border: 1px solid #e0c97f;
     border-radius: 12px;
     width: 280px;
-    box-shadow: 0 4px 12px rgba(107,46,46,0.15);
+    box-shadow: 0 4px 12px rgba(107, 46, 46, 0.15);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -127,7 +145,7 @@ article {
 /* Animation hover */
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(107,46,46,0.25);
+    box-shadow: 0 8px 20px rgba(107, 46, 46, 0.25);
 }
 
 
@@ -149,15 +167,28 @@ footer {
 
 /* Responsive : nav en colonne sur tablettes et mobiles */
 @media (max-width: 768px) {
+
+    /* Garder la nav horizontale : permettre le scroll horizontal si l'espace manque */
     nav {
-        flex-direction: column; /* Les liens s’empilent */
-        gap: 12px; /* Espacement entre les liens */
+        flex-direction: row;
+        /* Garder en ligne */
+        flex-wrap: nowrap;
+        /* Ne pas empiler */
+        gap: 10px;
+        overflow-x: auto;
+        /* Scroll horizontal si nécessaire */
+        -webkit-overflow-scrolling: touch;
+        padding: 12px;
     }
 
     nav a {
-        width: 90%; /* Chaque lien prend presque toute la largeur */
-        text-align: center;
-        font-size: 18px; /* Réduction de taille */
+        width: auto;
+        /* Laisser la largeur naturelle */
+        text-align: left;
+        font-size: 18px;
+        /* Réduction de taille */
+        white-space: nowrap;
+        /* Empêcher le retour à la ligne dans chaque lien */
     }
 }
 
@@ -178,6 +209,13 @@ footer {
 
 /* ----- Animation (ajoutée) ----- */
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(15px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
